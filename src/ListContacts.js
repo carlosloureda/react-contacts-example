@@ -1,18 +1,13 @@
 import React, { Component } from 'react'
-
-/**
- * This couuld be a Stateless Functional Conponent, this is a function like thie:
- * function LsitContacts(props) {
- *   return('INSIDE-THE-COMPONENT-TO-RENDER')
- * }
- * 
- * NOTE: See that the state is managed in the parent compoennt not in the component
- * itself
- */
+import PropTypes from 'prop-types'
 
 export class ListContacts extends Component {
-    /* We add the contacts to the state of the component so it changes while the
-    state changes */
+
+    static propTypes = {
+        contacts: PropTypes.array.isRequired,
+        onDeleteContact: PropTypes.func.isRequired
+    }
+    
     render() {
         return (
             <ol className="contact-list">
@@ -40,5 +35,7 @@ export class ListContacts extends Component {
         )
     }
 }
+
+
 
 export default ListContacts
