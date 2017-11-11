@@ -5,12 +5,14 @@ import React, { Component } from 'react'
  * function LsitContacts(props) {
  *   return('INSIDE-THE-COMPONENT-TO-RENDER')
  * }
+ * 
+ * NOTE: See that the state is managed in the parent compoennt not in the component
+ * itself
  */
 
 export class ListContacts extends Component {
     /* We add the contacts to the state of the component so it changes while the
     state changes */
-
     render() {
         return (
             <ol className="contact-list">
@@ -24,7 +26,8 @@ export class ListContacts extends Component {
                                 <p>{contact.name}</p>                                
                                 <p>{contact.email}</p>                                
                             </div>
-                            <button                                 
+                            <button 
+                                onClick={() => this.props.onDeleteContact(contact)}
                                 className='contact-remove'
                             >
                                 Remove
