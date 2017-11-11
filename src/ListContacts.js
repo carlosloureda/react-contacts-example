@@ -23,6 +23,7 @@ export class ListContacts extends Component {
     }
 
     render() {
+        console.log("Rendered");
         // ES6 Destructuring 
         const {contacts, onDeleteContact } = this.props
         const { query } = this.state
